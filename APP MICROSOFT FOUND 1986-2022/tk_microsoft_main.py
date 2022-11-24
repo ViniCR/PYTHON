@@ -10,10 +10,7 @@ y=1986
 while y <=2022:
     l.append(str(y))
     y+=1
-
-
-
-
+    
 class Methods():
    
 
@@ -47,15 +44,6 @@ class Methods():
         """)
         self.file.close()
 
-
-
-
-                
-
-
-
-
-        
 
 class Application(Methods):
     def __init__(self):
@@ -97,33 +85,6 @@ class Application(Methods):
 
 
 class Method_2():
-
-    def screen(self):
-        print('\n'*3)
-        print(f'''{'-'*40}
-Year  : {self.year}
-{'-'*40}''')
-        print('Date         Open    Close    Score\n')
-        for self.n in self.table.index:
-            time.sleep(0.01)
-            if self.table["Score"][self.n] > 0:
-                print(f'\033[32m{self.table["Date"][self.n]: <12} {round(self.table["Open"][self.n], 3): <7} {round(self.table["Close"][self.n], 3): <7}  {round(self.table["Score"][self.n], 3): <7}\033[m')
-            elif self.table["Score"][self.n] < 0:
-                print(f'\033[31m{self.table["Date"][self.n]: <12} {round(self.table["Open"][self.n], 3): <7} {round(self.table["Close"][self.n], 3): <7}  {round(self.table["Score"][self.n], 3): <7}\033[m')
-            else:
-                print(f'\033[m{self.table["Date"][self.n]: <12} {round(self.table["Open"][self.n], 3): <7} {round(self.table["Close"][self.n], 3): <7}  {round(self.table["Score"][self.n], 3): <7}')
-        
-        self.open = self.table['Open'].iloc[0]
-        self.close = self.table['Close'].iloc[len(self.table)-1]
-
-        time.sleep(1)
-        print(f'''{'-'*40}
-Year  : {self.year}
-Open  : {round(self.open,3)}
-Close : {round(self.close,3)}
-{'-'*40}
-
-''')
 
     def loc_date_set_table(self):
         self.year = self.value_inside.get()
@@ -182,18 +143,6 @@ Close : {round(self.close,3)}
         self.close = self.table['Close'].iloc[len(self.table)-1]
         self.score=self.open-self.close
 
-
-
-        
-        
-
-        
-        
-        
-
-        
-
-
 class Finder(Method_2):
     def __init__(self):
        self.tree = Toplevel()
@@ -220,10 +169,5 @@ class Finder(Method_2):
         self.confirm_button.place(relx=0.86, rely=0, relwidth=0.14, relheight=1)
         self.confirm_button.config(bg='gray20', fg='pale green', bd=0)
 
-
-
-
-        
-    
 Application()
 
